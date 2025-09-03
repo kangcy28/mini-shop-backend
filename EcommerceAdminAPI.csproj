@@ -19,4 +19,10 @@
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="EcommerceAdminAPI.Tests/**" />
+    <EmbeddedResource Remove="EcommerceAdminAPI.Tests/**" />
+    <None Remove="EcommerceAdminAPI.Tests/**" />
+  </ItemGroup>
+
 </Project>
