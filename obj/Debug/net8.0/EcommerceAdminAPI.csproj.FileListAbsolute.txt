@@ -162,3 +162,4 @@
 /mnt/c/Users/USER/Desktop/.net project/mini-shop-backend/obj/Debug/net8.0/EcommerceAdminAPI.pdb
 /mnt/c/Users/USER/Desktop/.net project/mini-shop-backend/obj/Debug/net8.0/EcommerceAdminAPI.genruntimeconfig.cache
 /mnt/c/Users/USER/Desktop/.net project/mini-shop-backend/obj/Debug/net8.0/ref/EcommerceAdminAPI.dll
+/mnt/c/Users/USER/Desktop/.net project/mini-shop-backend/obj/Debug/net8.0/EcommerceAdminAPI.sourcelink.json
