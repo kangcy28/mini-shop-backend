@@ -1,0 +1,26 @@
+{
+  // SonarLint .NET 特定設定
+  "sonarlint.rules": {
+    // 常用 C# 規則調整
+    "csharpsquid:S1118": "off",  // 關閉靜態類建構子規則
+    "csharpsquid:S3776": "warn", // 認知複雜度警告
+    "csharpsquid:S1200": "warn", // 類別大小警告
+    "csharpsquid:S107": "warn",  // 參數過多警告
+    
+    // 命名規則
+    "csharpsquid:S101": "error", // 類別命名規則
+    "csharpsquid:S100": "error", // 方法命名規則
+    
+    // 安全性規則
+    "csharpsquid:S2245": "error", // 不安全的隨機數生成
+    "csharpsquid:S5042": "error" // ZIP 炸彈防護
+  },
+  
+  // .NET 專案檔案分析
+  "sonarlint.analysis.excludedFiles": [
+    "**/bin/**",
+    "**/obj/**",
+    "**/*.designer.cs",
+    "**/Migrations/**"
+  ]
+}

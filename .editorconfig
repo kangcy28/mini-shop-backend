@@ -1,0 +1,18 @@
+root = true
+
+[*.cs]
+# SonarLint 會遵循這些設定
+
+# 縮排設定
+indent_style = space
+indent_size = 4
+
+# 命名規則
+dotnet_naming_rule.pascal_case_for_class.severity = error
+dotnet_naming_rule.pascal_case_for_class.symbols = class_symbols
+dotnet_naming_rule.pascal_case_for_class.style = pascal_case
+
+dotnet_naming_symbols.class_symbols.applicable_kinds = class
+dotnet_naming_symbols.class_symbols.applicable_accessibilities = *
+
+dotnet_naming_style.pascal_case.capitalization = pascal_case
