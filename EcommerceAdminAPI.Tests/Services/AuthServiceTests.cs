@@ -26,10 +26,15 @@ namespace EcommerceAdminAPI.Tests.Services
             mockJwtSection.Setup(x => x["Key"]).Returns("ThisIsAVerySecretKeyForTestingPurposesOnly123456789");
             mockJwtSection.Setup(x => x["Issuer"]).Returns("TestIssuer");
             mockJwtSection.Setup(x => x["Audience"]).Returns("TestAudience");
-            mockJwtSection.Setup(x => x.GetValue<int>("ExpirationInHours")).Returns(24);
+            var mockExpirationInHoursSection = new Mock<IConfigurationSection>();
+            mockExpirationInHoursSection.Setup(x => x.Value).Returns("24");
+            mockJwtSection.Setup(x => x.GetSection("ExpirationInHours")).Returns(mockExpirationInHoursSection.Object);
             
             _mockConfiguration.Setup(x => x.GetSection("JwtSettings")).Returns(mockJwtSection.Object);
-            _mockConfiguration.Setup(x => x.GetValue<int>("JwtSettings:ExpirationInHours")).Returns(24);
+            
+            var mockExpirationSection = new Mock<IConfigurationSection>();
+            mockExpirationSection.Setup(x => x.Value).Returns("24");
+            _mockConfiguration.Setup(x => x.GetSection("JwtSettings:ExpirationInHours")).Returns(mockExpirationSection.Object);
             
             _authService = new AuthService(_mockUserRepository.Object, _mockConfiguration.Object);
         }
