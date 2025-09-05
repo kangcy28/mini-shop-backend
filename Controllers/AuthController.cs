@@ -20,6 +20,11 @@ namespace EcommerceAdminAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<AuthResponseDto>> Login([FromBody] LoginDto loginDto)
         {
+            if (loginDto == null)
+            {
+                throw new ArgumentNullException(nameof(loginDto));
+            }
+
             try
             {
                 var result = await _authService.LoginAsync(loginDto);
