@@ -91,7 +91,7 @@ namespace EcommerceAdminAPI.Controllers
         [HttpPost("{id}/transition")]
         public async Task<ActionResult<Order>> TransitionOrderStatus(int id, [FromBody] TransitionRequest request)
         {
-            if (string.IsNullOrEmpty(request?.NewStatus))
+            if (string.IsNullOrWhiteSpace(request?.NewStatus))
             {
                 return BadRequest("NewStatus is required");
             }
